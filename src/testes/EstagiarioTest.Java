@@ -1,25 +1,27 @@
-package funcionarios;
+package testes;
 
-import static org.junit.jupiter.api.Assertions.*;
+import funcionarios.Estagiario;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class EstagiarioTest {
+class EstagiarioTest {
+
+    Estagiario estagiario;
+
+    @BeforeEach
+    void setup() {
+        estagiario = new Estagiario(1, "João", 20, 15);
+    }
 
     @Test
     void testCalcularSalario() {
-        // horasTrabalhadas = 20, valorHora = 15
-        // cálculo: (20 * 15) * 0.8 = 240
-        Estagiario e = new Estagiario(1, "João", 20, 15);
-
-        double salario = e.calcularSalario();
-
-        assertEquals(240, salario);
+        // 20 * 15 = 300 → 300 * 0.8 = 240
+        assertEquals(240, estagiario.calcularSalario());
     }
 
     @Test
     void testGetId() {
-        Estagiario e = new Estagiario(1, "João", 20, 15);
-
-        assertEquals(1, e.getId());
+        assertEquals(1, estagiario.getId());
     }
 }

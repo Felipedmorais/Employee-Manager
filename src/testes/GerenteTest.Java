@@ -1,25 +1,27 @@
-package funcionarios;
+package testes;
 
-import static org.junit.jupiter.api.Assertions.*;
+import funcionarios.Gerente;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class GerenteTest {
+class GerenteTest {
+
+    Gerente gerente;
+
+    @BeforeEach
+    void setup() {
+        gerente = new Gerente(2, "Maria", 40, 30, 500);
+    }
 
     @Test
     void testCalcularSalario() {
-        // horasTrabalhadas = 40, valorHora = 50, bonus = 500
-        // cálculo: (40 * 50) + 500 = 2500
-        Gerente g = new Gerente(3, "Carlos", 40, 50, 500);
-
-        double salario = g.calcularSalario();
-
-        assertEquals(2500, salario);
+        // (40 * 30) + 500 = 1700
+        assertEquals(1700, gerente.calcularSalario());
     }
 
     @Test
     void testGetId() {
-        Gerente g = new Gerente(3, "Carlos", 40, 50, 500);
-
-        assertEquals(3, g.getId());
+        assertEquals(2, gerente.getId());
     }
 }

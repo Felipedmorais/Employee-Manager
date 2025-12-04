@@ -1,25 +1,27 @@
-package funcionarios;
+package testes;
 
-import static org.junit.jupiter.api.Assertions.*;
+import funcionarios.Funcionariocomum;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class FuncionariocomumTest {
+class FuncionariocomumTest {
+
+    Funcionariocomum funcionario;
+
+    @BeforeEach
+    void setup() {
+        funcionario = new Funcionariocomum(3, "Carlos", 30, 20);
+    }
 
     @Test
     void testCalcularSalario() {
-        // horasTrabalhadas = 40, valorHora = 22
-        // cálculo: 40 * 22 = 880
-        Funcionariocomum f = new Funcionariocomum(2, "Maria", 40, 22);
-
-        double salario = f.calcularSalario();
-
-        assertEquals(880, salario);
+        // 30 * 20 = 600
+        assertEquals(600, funcionario.calcularSalario());
     }
 
     @Test
     void testGetId() {
-        Funcionariocomum f = new Funcionariocomum(2, "Maria", 40, 22);
-
-        assertEquals(2, f.getId());
+        assertEquals(3, funcionario.getId());
     }
 }

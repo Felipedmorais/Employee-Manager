@@ -64,7 +64,7 @@ public class Main {
                 case 4 -> {
                     System.out.println("\n=== LISTA DE FUNCIONÁRIOS ===");
                     for (Funcionario f : funcionarios) {
-                        f.exibirinfo();
+                        f.exibirInfo();
                 }
 
                 }
