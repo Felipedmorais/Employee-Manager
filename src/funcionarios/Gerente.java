@@ -13,4 +13,9 @@ public class Gerente extends Funcionario {
         // Gerente ganha o salário base + bônus
         return (horasTrabalhadas * valorHora) + bonus;
     }
+
+    public double getBonus() {
+        return bonus;
+    }
+
 }

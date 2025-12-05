@@ -40,5 +40,6 @@ public abstract class Funcionario {
     public double getValorHora() {
         return valorHora;
     }
+
 }
 
